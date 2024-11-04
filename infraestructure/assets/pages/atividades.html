@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="../images/favicon2-16x16.png" type="image/x-icon">
+    <title>Pagina auxiliar</title>
+</head>
+<body>
+    <h1> Pagina para as atividades</h1>
+    <nav>
+        <a href="../pages/index.html">Home</a>
+    </nav>
+    <section>
+         <!-- adicionando lista-->
+        <div id="lista">
+            <ul>
+                <li>Dragon ball z</li>
+                <li>Naruto</li>
+                <li>One piece</li>
+                <li>Death note</li>
+            </ul>
+        </div>
+
+        <div id="imagem-responsiva">
+            <picture>
+                <source media="(max-width: 500px)" srcset="../images/pequena.jfif">
+                <source media="(max-width: 800px)" srcset="../images/media.png">
+                <img src="../images/grande.jpg" alt="">
+
+            </picture>
+         <!--adicionando video-->
+         <h3>Video</h3>
+        <div id="video">
+            <iframe width="560" height="315" src="https://www.youtube.com/embed/GI3rKNjQQig?si=iGWEVleyOuX_Q_Gh" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+         
+            <h3>Audio</h3>
+        </div>
+            <!--adicionando audio-->
+            <div id="audio">
+              <audio controls
+              src="/infraestructure/assets/audio/Adoniran Barbosa   Trem das onze 1964 ( 128kbps ).mp3" type="audio/mp3"></audio>
+            </div>
+        
+
+    </section>
+    
+    
+</body>
+</html>
