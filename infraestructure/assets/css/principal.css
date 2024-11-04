@@ -1,0 +1,45 @@
+*{
+    margin:0;
+    padding:0;
+}
+/* palheta de cores */
+:root {
+    /* Cores de Fundo */
+    --background-light: #f5f5f5;
+    --background-dark: #1f1f1f;
+  
+    /* Cores de Texto */
+    --text-primary: #333333;
+    --text-secondary: #777777;
+    --text-light: #ffffff;
+  
+    /* Cores de Destaque */
+    --cor-principal: #0077b6; /* Azul principal */
+    --cor-secundaria: #0096c7; /* Azul claro */
+    --cor-destaque: #ffd166; /* Amarelo de destaque */
+    --error-color: #d90429; /* Vermelho para erros */
+  
+    /* Cores de Borda e Elementos */
+    --border-color: #e0e0e0;
+    --button-hover: #005f86;
+    --input-background: #fafafa;
+  
+    /* Sombras */
+    --sombra-clara: rgba(0, 0, 0, 0.1);
+    --sombra-escura: rgba(0, 0, 0, 0.3);
+  }
+  
+h1{
+    text-align: center;
+    padding: 20px;
+    color:var(--text-primary);
+    background-color: var(--background-light);
+}
+pre{
+    padding: 10px;
+    color: var(--text-light);
+    font-size: 20px;
+}
+body{
+    background-color: var(--background-dark);
+}
