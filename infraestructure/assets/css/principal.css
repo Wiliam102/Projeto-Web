@@ -4,42 +4,116 @@
 }
 /* palheta de cores */
 :root {
-    /* Cores de Fundo */
-    --background-light: #f5f5f5;
-    --background-dark: #1f1f1f;
-  
-    /* Cores de Texto */
-    --text-primary: #333333;
-    --text-secondary: #777777;
-    --text-light: #ffffff;
-  
-    /* Cores de Destaque */
-    --cor-principal: #0077b6; /* Azul principal */
-    --cor-secundaria: #0096c7; /* Azul claro */
-    --cor-destaque: #ffd166; /* Amarelo de destaque */
-    --error-color: #d90429; /* Vermelho para erros */
-  
-    /* Cores de Borda e Elementos */
-    --border-color: #e0e0e0;
-    --button-hover: #005f86;
-    --input-background: #fafafa;
-  
-    /* Sombras */
-    --sombra-clara: rgba(0, 0, 0, 0.1);
-    --sombra-escura: rgba(0, 0, 0, 0.3);
+ --cor1:#ccffff;
+ --cor2:#8fb3b3;
+ --cor3:#ffddcc;
+ --cor4:#b3958f;
+ --cor5:rgba(0, 0, 0, 0.952);
+ --cor6:rgba(255, 255, 255, 0.938);
+    
   }
-  
-h1{
-    text-align: center;
+
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
+
+body {
+    font-family: 'Roboto', sans-serif;
+    background-color: var(--cor3);
+    justify-content: center; /* Centraliza horizontalmente */
+    align-items: center; /* Centraliza verticalmente */
+    height: 100vh; /* Preenche a altura da viewport */
+    margin: 0; /* Remove a margem padrão */
+}
+
+header > h1 {
+    color: var(--cor5);
     padding: 20px;
-    color:var(--text-primary);
-    background-color: var(--background-light);
+    text-align: center;
+    background-color: var(--cor4);
+    margin: 0; /* Remove a margem do cabeçalho */
 }
-pre{
-    padding: 10px;
-    color: var(--text-light);
-    font-size: 20px;
+
+section {
+    display: flex;
+    justify-content: center; /* Centraliza o conteúdo na seção */
+    align-items: center; /* Centraliza verticalmente */
 }
-body{
-    background-color: var(--background-dark);
+
+form {
+    display: flex; /* Alinha os itens do formulário */
+    flex-direction: column; /* Organiza os itens em coluna */
+    align-items: center; /* Centraliza os itens horizontalmente */
+    max-width: 400px; /* Largura máxima do formulário */
+    width: 100%; /* Largura total responsiva */
+    height: 300px;
+    padding: 20px; /* Espaçamento interno */
+
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Sombra suave */
+    border-radius: 8px; /* Cantos arredondados */
+    background-color: var(--cor6); /* Fundo branco para o formulário */
+    margin-top: 10%;
+}
+
+form > h2 {
+    color: var(--cor5);
+    text-align: center; /* Centraliza o título do formulário */
+    margin: 0 0 15px 0; /* Margem inferior para espaçamento */
+}
+
+.form-group {
+    width: 100%; /* Faz o grupo ocupar toda a largura do formulário */
+    margin-bottom: 15px; /* Espaçamento entre grupos */
+}
+.form-group label{
+    margin-bottom: 10px;
+    display: block;
+    font-size: 12;
+    color: var(--cor5);
+}
+.input {
+    width: 100%; /* Largura total */
+    padding: 10px; /* Espaçamento interno */
+    font-size: 1rem; /* Tamanho da fonte */
+    border: 1px solid #ddd; /* Borda suave */
+    border-radius: 5px; /* Cantos arredondados */
+    box-sizing: border-box; /* Inclui padding e borda na largura total */
+}
+form > a{
+    color: var(--cor2);
+    font-weight: 500;
+    font-style: italic;
+    margin: 10px;
+}
+form > a:hover{
+    color: var(--cor5);
+}
+
+#btn-login {
+    width: 100%; /* Largura total */
+    padding: 10px; /* Espaçamento interno */
+    background-color: var(--cor4); /* Cor do fundo */
+    color: var(--cor6); /* Cor do texto */
+    border: none; /* Sem borda */
+    border-radius: 5px; /* Cantos arredondados */
+    cursor: pointer; /* Cursor de ponteiro */
+    font-size: 1rem; /* Tamanho da fonte */
+}
+#btn-login:hover{
+ background-color: var(--cor3);
+ color: var(--cor5);
+}
+
+/* Ajustes responsivos */
+@media (max-width: 480px) {
+    form {
+        padding: 15px; /* Reduz o espaçamento interno em telas pequenas */
+    }
+    
+    form > h2 {
+        font-size: 1.25rem; /* Tamanho da fonte do título */
+    }
+    
+    .input, #btn-login {
+        font-size: 0.9rem; /* Tamanho da fonte para campos e botões */
+        padding: 8px; /* Reduz o espaçamento interno */
+    }
 }
