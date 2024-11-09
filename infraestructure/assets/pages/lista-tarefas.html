@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lista de tarefas</title>
+    <link rel="stylesheet" href="../css/principal.css">
+</head>
+<body>
+    <header id="cabecalho-lista-tarefas">
+        <nav class="menu-hamburguer">
+            <input type="checkbox" id="menu">
+            <label for="menu" class="icone-menu">
+                <span></span>
+                <span></span>
+                <span></span>
+            </label>
+            <ul class="lista">
+                <li><a href="#">Home</a></li>
+                <li><a href="#">Sobre</a></li>
+                <li><a href="#">Serviços</a></li>
+                <li><a href="#">Contato</a></li>
+                <li><button class="fechar-menu" onclick="fecharMenu()">&#x2715; Fechar</button></li> <!-- Botão para fechar o menu -->
+            </ul>
+
+        </nav>
+    </header>
+    <section>
+      <div id="lista-tarefas">
+        
+        <form action="" class="lista-tarefas">
+            <h1>Lista de tarefas</h1>
+            <input type="text" id="input-tarefa" placeholder="adicione uma nova tarefa">
+            <button type="submit" id="add-tarefa">adicionar</button>
+            <ul id="lista">
+
+            </ul>
+        </form>
+        
+
+      </div>
+
+    </section>
+    <footer>
+      <span>&copy;2024</span>
+    </footer>
+    <!-- java script-->
+     <script src="../js/script.js"></script>
+</body>
+</html>
