@@ -16,19 +16,20 @@
           <h2>Cadastro</h2>
             <div class="form-group">
               <label for="nome">Nome</label>
-              <input type="text" required class="input">
+              <input type="text"class="input" required minlength="3" placeholder="digite seu nome">
             </div>
             <div class="form-group">
                 <label for="Email">Email</label>
-              <input type="email" required class="input">
+              <input type="email"  class="input" required placeholder="exemplo@hotmail.com">
             </div>
             <div class="form-group">
                 <label for="Senha">Senha</label>
-              <input type="password" required class="input">
+              <input type="password" required minlength="6" class="input" placeholder="digite sua senha">
             </div>
             <div class="form-group">
                 <label for="telefone">telefone</label>
-              <input type="tel" required class="input">
+              <input type="tel"  class="input"
+              required patern="\(\d{2}\) \d{4,5}-\d{4}"  placeholder="(XX) XXXXX-XXXX">
             </div>
            <button type="submit" id="btn-login">Salvar</button>
         </form>
