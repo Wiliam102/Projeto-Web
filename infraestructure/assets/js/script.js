@@ -85,4 +85,46 @@ document.getElementById('login-form').addEventListener('submit', function (event
 });
 
 });
+// java script para pagina de tarefas
+document.addEventListener('DOMContentLoaded', () => {
+  const formTarefas = document.getElementById('form-tarefas');
+  const inputTarefa = document.getElementById('input-tarefa');
+  const lista = document.getElementById('lista');
+
+  // Função para adicionar uma nova tarefa
+  formTarefas.addEventListener('submit', (e) => {
+    e.preventDefault();
+    const tarefa = inputTarefa.value.trim();
+    if (tarefa === '') {
+      alert('Digite uma tarefa!');
+      return;
+    }
+
+    const li = document.createElement('li');
+    li.innerHTML = `
+      <span class="tarefa-texto">${tarefa}</span>
+      <button class="editar-tarefa">Editar</button>
+      <button class="remover-tarefa">Remover</button>
+    `;
+
+    lista.appendChild(li);
+    inputTarefa.value = '';
+    inputTarefa.focus();
+  });
+
+  // Função para editar ou remover tarefas
+  lista.addEventListener('click', (e) => {
+    if (e.target.classList.contains('remover-tarefa')) {
+      const li = e.target.parentElement;
+      lista.removeChild(li);
+    } else if (e.target.classList.contains('editar-tarefa')) {
+      const li = e.target.parentElement;
+      const span = li.querySelector('.tarefa-texto');
+      const novaTarefa = prompt('Edite a tarefa:', span.textContent);
+      if (novaTarefa !== null && novaTarefa.trim() !== '') {
+        span.textContent = novaTarefa.trim();
+      }
+    }
+  });
+});
   

@@ -123,7 +123,6 @@ footer{
 }
 /* menu hamburguer */
 #cabecalho-lista-tarefas {
-    position: fixed;
     top: 0;
     width: 100%;
     padding: 10px;
@@ -151,8 +150,8 @@ footer{
   .icone-menu span {
     display: block;
     width: 100%;
-    height: 5px;
-    background-color: black;
+    height: 6px;
+    background-color: var(--cor5);
     border-radius: 2px;
     transition: all 0.3s ease-in-out;
   }
@@ -164,7 +163,7 @@ footer{
     position: fixed;
     top: 0;
     right: 0;
-    background-color: #000;
+    background-color: var(--cor2);
     color: white;
     width: 200px;
     height: 100vh;
@@ -322,7 +321,120 @@ td button {
   background-color: var(--cor2);
   color: white;
 }
+/*form lista de tarefas*/
+#form-tarefas{
+  margin-top: 25%;
+  padding:0;
+  display: flex;
+  flex-direction: row;
+  gap: 20px;
+  height: 0;
+}
+#rodape-tarefas{
+  margin-top:40%;
+}
+#rodape-tarefas > span{
+  font-size: 16px;
+  font-weight: bold;
+}
+#input-tarefa{
+  width: 300px;
+  height: 40px;
+  border:1px solid black;
+}
+#add-tarefa{
+  width:100px;
+  height: 35px;
+  border-radius: 5px;
+  background: var(--cor5);
+  color:var(--cor6);
+  border: none;
+  font-weight: bold;
+}
+#add-tarefa:hover{
+ background-color: var(--cor4);
+ transition: background-color 0.3s ease;
+ color: var(--cor5);
+ cursor: pointer;
 
+}
+[placeholder]{
+ text-align: center;
+}
+#cabecalho-lista-tarefas{
+  display: flex;
+  justify-content: space-between;
+
+}
+#cabecalho-lista-tarefas > h1{
+  background: transparent;
+  margin-left: 35%;
+  font-weight: 800;
+}
+#lista{
+  display: block;
+  padding: 20px;
+  margin-top: 40px;
+  text-decoration: none;
+}
+#lista li{
+  display: flex;
+  justify-content: space-between; /* Espaça o texto e os botões */
+  align-items: center;
+  padding: 10px;
+  margin-bottom: 8px;
+  background-color: #f9f9f9;
+  border-radius: 5px;
+  box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.1);
+  transition: background-color 0.3s ease;
+}
+
+#lista li:hover {
+  background-color: #e6f7ff; /* Cor de fundo ao passar o mouse */
+}
+
+/* Estilo do texto da tarefa */
+.tarefa-texto {
+  font-size: 16px;
+  color: #333;
+  flex: 1; /* Ocupa todo o espaço disponível */
+  margin-right: 10px;
+}
+
+/* Estilo dos botões */
+#lista li button {
+  background-color: #70cbe9;
+  color: #fff;
+  border: none;
+  padding: 5px 10px;
+  border-radius: 3px;
+  cursor: pointer;
+  font-size: 14px;
+  transition: background-color 0.3s ease;
+}
+
+#lista li button:hover {
+  background-color: #56a8c4;
+}
+
+#lista li .remover-tarefa {
+  background-color: var(--cor4);
+}
+
+#lista li .remover-tarefa:hover {
+  background-color: var(--cor3);
+  color: var(--cor5);
+}
+
+#lista li .editar-tarefa {
+  background-color: var(--cor2);
+  margin-right: 5px;
+}
+
+#lista li .editar-tarefa:hover {
+  background-color: var(--cor1);
+  color: var(--cor5);
+}
 /* Responsividade para a Tabela */
 @media (max-width: 768px) {
   table {
