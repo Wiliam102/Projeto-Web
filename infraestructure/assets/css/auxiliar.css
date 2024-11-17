@@ -8,9 +8,13 @@
   body {
     background-image: url('/infraestructure/assets/images/imagem_fundo.jfif');
     background-size: cover;
-    background-attachment: fixed;
+    background-repeat: no-repeat; /* Evita que a imagem se repita */
+    background-attachment: fixed; /* Mantém a imagem fixa ao rolar a página */
     font-family: 'Roboto', sans-serif;
     color: #333;
+    margin: 0; /* Remove margens padrões do body */
+    min-height: 100vh; /* Garante que o body cubra toda a altura da tela */
+
   }
   
   /* Cabeçalho */

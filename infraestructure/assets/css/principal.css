@@ -1,6 +1,7 @@
+
 *{
-    margin:0;
-    padding:0;
+  margin: 0;
+  padding: 0;
 }
 /* palheta de cores */
 :root {
@@ -13,29 +14,35 @@
     
   }
 
-@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
-
+  @import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&family=Sigmar+One&display=swap');
+  
 body {
-    font-family: 'Roboto', sans-serif;
-    background-color: var(--cor3);
-    justify-content: center; /* Centraliza horizontalmente */
-    align-items: center; /* Centraliza verticalmente */
-    height: 100vh; /* Preenche a altura da viewport */
-    margin: 0; /* Remove a margem padrão */
+  font-family: 'Roboto', sans-serif;
+  background-color: var(--cor3);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+}
+header{
+  width: 100%;
 }
 
 header > h1 {
-    color: var(--cor5);
-    padding: 20px;
-    text-align: center;
-    background-color: var(--cor4);
-    margin: 0; /* Remove a margem do cabeçalho */
+  color: var(--cor5);
+  padding: 20px;
+  text-align: center;
+  background-color: var(--cor4);
+  font-family: 'Sigmar One', cursive;
+  margin: 0;
 }
 
 section {
-    display: flex;
-    justify-content: center; /* Centraliza o conteúdo na seção */
-    align-items: center; /* Centraliza verticalmente */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
 }
 
 form {
@@ -44,7 +51,6 @@ form {
     align-items: center; /* Centraliza os itens horizontalmente */
     max-width: 400px; /* Largura máxima do formulário */
     width: 100%; /* Largura total responsiva */
-    height: 300px;
     padding: 20px; /* Espaçamento interno */
 
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Sombra suave */
@@ -54,9 +60,9 @@ form {
 }
 
 form > h2 {
-    color: var(--cor5);
-    text-align: center; /* Centraliza o título do formulário */
-    margin: 0 0 15px 0; /* Margem inferior para espaçamento */
+  color: var(--cor5);
+  margin-bottom: 15px;
+  text-align: center;/
 }
 
 .form-group {
@@ -105,16 +111,16 @@ form > a:hover{
 }
 
 footer{
-    font-size: 12px;
-    display: flex;
-    padding: 15px;
-    margin: 15px;
-    justify-content: center;
+  font-size: 12px;
+  text-align: center;
+  margin-top: 20px;
+  margin-bottom: 20px;
+  font-weight: bold;
     
 }
 #cadastro-form{
     max-width: 500px;
-    width:100%;
+    width:80%;
     height: 500px;
 }
 #cadastro-form #btn-login{
@@ -127,6 +133,10 @@ footer{
     width: 100%;
     padding: 10px;
     z-index: 1000;
+  }
+  #container-tarefas{
+    display: flex;
+    align-items: baseline;
   }
   
   .menu-hamburguer {
@@ -144,7 +154,7 @@ footer{
     height: 25px;
     cursor: pointer;
     margin-top: 10px;
-    margin-right: 15px;
+    margin-right: 10px;
   }
   
   .icone-menu span {
@@ -228,23 +238,6 @@ footer{
     align-content: center;
   }
 
-/* Ajustes responsivos */
-@media (max-width: 480px) {
-    form {
-        padding: 15px; /* Reduz o espaçamento interno em telas pequenas */
-    }
-    
-    form > h2 {
-        font-size: 1.25rem; /* Tamanho da fonte do título */
-    }
-    
-    .input, #btn-login {
-        font-size: 0.9rem; /* Tamanho da fonte para campos e botões */
-        padding: 8px; /* Reduz o espaçamento interno */
-    }
-
-    
-}
 #container-usuarios {
   display: flex;
   align-items: center;
@@ -256,16 +249,27 @@ footer{
 
 /* Tabela */
 table {
-  width: 100%;
+  width: 80%;
   border-collapse: collapse;
   margin: 20px 0;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  
 }
-
+#titulo-tabela{
+  font-size: 1.5rem;
+  margin:0;
+  background-color: transparent;
+  flex-direction: column;
+}
 th, td {
+  width: auto;
   padding: 12px;
   text-align: left;
   border: 1px solid var(--cor2);
+  flex-shrink: 1;
+}
+th,td{
+  word-break: break-all;
 }
 
 th {
@@ -293,7 +297,8 @@ td button {
 .btn-edit {
   background-color: var(--cor4);
   color: var(--cor6);
-  margin: 10px;
+  margin-bottom: 5px;
+  margin-right: 5px;
 }
 
 .btn-edit:hover {
@@ -311,7 +316,6 @@ td button {
 #btn-add{
   padding: 8px 12px;
   font-size: 14px;
-  margin: 50px;
   cursor: pointer;
   border: 1px solid --cor2;
   border-radius: 5px;
@@ -326,9 +330,10 @@ td button {
   margin-top: 25%;
   padding:0;
   display: flex;
-  flex-direction: row;
-  gap: 20px;
+  flex-direction: column;
+  gap: 12px;
   height: 0;
+  margin-bottom: 20%;
 }
 #rodape-tarefas{
   margin-top:40%;
@@ -338,13 +343,16 @@ td button {
   font-weight: bold;
 }
 #input-tarefa{
-  width: 300px;
-  height: 40px;
+  width:100%;
+  max-width: 250px;
+  height: 80px;
   border:1px solid black;
+  font-size: 16px;
 }
 #add-tarefa{
-  width:100px;
-  height: 35px;
+  width: 60px;
+  padding: 10px;
+  height: 30px;
   border-radius: 5px;
   background: var(--cor5);
   color:var(--cor6);
@@ -364,17 +372,19 @@ td button {
 #cabecalho-lista-tarefas{
   display: flex;
   justify-content: space-between;
+  gap: 20px;
 
 }
 #cabecalho-lista-tarefas > h1{
   background: transparent;
-  margin-left: 35%;
   font-weight: 800;
+  margin-left: 20%;
+  font-size: 2rem;
 }
 #lista{
   display: block;
   padding: 20px;
-  margin-top: 40px;
+  margin-top: 25px;
   text-decoration: none;
 }
 #lista li{
@@ -435,32 +445,97 @@ td button {
   background-color: var(--cor1);
   color: var(--cor5);
 }
-/* Responsividade para a Tabela */
-@media (max-width: 768px) {
-  table {
-      display: block;
-      width: 100%;
-      overflow-x: auto;
-      white-space: nowrap;
+#container-usuarios > h1{
+  font-size: 2rem;
+  font-family: 'Sigma One', cursive;
+}
+footer > nav > a{
+  color: black;
+  padding: 5px 10px;
+}
+footer > nav > a:hover{
+  background-color: var(--cor4);
+  color: white;
+}
+/* Responsividade para telas maiores */
+@media (min-width: 768px) {
+  form {
+      max-width: 400px;
+      height: 360px;
+  }
+  header > h1{
+    background-color: transparent;
+    padding: 20px;
+    font-size: 2rem;
+  
+  }
+  header{
+    margin-top: 0;
   }
 
-  th, td {
-      text-align: center;
+  footer {
       font-size: 14px;
+      margin-top: 20px;
+      margin-bottom: 20px;
+      font-weight: bold;
   }
 
-  td button {
-      font-size: 12px;
-      padding: 5px 10px;
+  table {
+    width: 100%; /* Tabela usa 100% da largura da tela */
+  }
+  th, td {
+    white-space: nowrap; /* Evita quebra de linha dentro das células */
+  }
+  #btn-login{
+    margin-top: 20px;
+  }
+  form > a{
+    margin-top: 20px;
+  }
+  .btn-edit {
+    background-color: var(--cor4);
+    margin-bottom: 5px;
   }
 }
 
-@media (max-width: 480px) {
-  table {
-      font-size: 12px;
+@media (min-width: 1024px) {
+  
+
+  header > h1 {
+      font-size: 3rem;
+      padding: 20px;
+      padding-bottom: 30px;
+      background-color: var(--cor4);
+  }
+  #cabecalho-lista-tarefas > h1{
+    margin-left: 35%;
+  }
+  .form-group label{
+    margin-top: 15px;
   }
 
-  td, th {
-      padding: 8px;
+  form {
+      max-width: 500px;
+      height: 400px;
+      padding: 10px;
   }
+  table {
+    width: 100%; /* Tabela usa 100% da largura da tela */
+  }
+  th, td {
+    white-space: nowrap; /* Evita quebra de linha dentro das células */
+  }
+#container-usuarios > h1{
+  font-family: 'Sigma One', cursive;
+  font-size: 3rem;
+}
+  footer{
+    margin: 20px;
+    font-weight: bold;
+  }
+  #btn-login{
+    margin-bottom: 10px;
+    margin-top: 20px;
+  }
+ 
 }
