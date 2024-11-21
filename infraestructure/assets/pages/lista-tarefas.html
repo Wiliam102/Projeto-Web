@@ -4,10 +4,12 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Lista de tarefas</title>
-    <link rel="stylesheet" href="../css/principal.css">
+    <!--<link rel="stylesheet" href="../css/principal.css">-->
+    <link rel="stylesheet" href="../bootstrap/bootstrap.min.css">
     <style>
         body {
-  --s: 56px; /* control the size*/
+            
+  --s: 56px; /* control the size abaixo tem uma estilização para o fundo da pagina que peguei pronto de um site de stilos*/
   --c1: #71c4be;
   --c2: #f7a3a1;
   
@@ -38,49 +40,52 @@
     var(--c2);
   background-size: calc(4*var(--r)) calc(6*var(--s));
 }
+/* adicao de css para fundo do cabecalho e rodape*/
+header{
+    background-color: #b3958f;
+}
+footer{
+    background-color: #b3958f;
+}
     </style>
 </head>
-<body>
-    <header id="cabecalho-lista-tarefas">
-        <h1>Lista de tarefas</h1>
-        <nav class="menu-hamburguer">
-            <input type="checkbox" id="menu">
-            <label for="menu" class="icone-menu">
-                <span></span>
-                <span></span>
-                <span></span>
-            </label>
-            <ul class="lista">
-                <li><a href="#">Home</a></li>
-                <li><a href="#">Sobre</a></li>
-                <li><a href="#">Serviços</a></li>
-                <li><a href="#">Contato</a></li>
-                <li><button class="fechar-menu" onclick="fecharMenu()">&#x2715; Fechar</button></li> <!-- Botão para fechar o menu -->
-            </ul>
-
-        </nav>
+<body class="bg-light">
+    <header class="text-white py-3">
+        <div class="container d-flex justify-content-between align-items-center">
+            <h1 class="h3 mb-0">Lista de Tarefas</h1>
+            <!-- Menu hamburguer do Bootstrap -->
+            <nav class="navbar navbar-expand-lg navbar-dark">
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarMenu" aria-controls="navbarMenu" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarMenu">
+                    <ul class="navbar-nav ms-auto">
+                        <li class="nav-item"><a class="nav-link" href="#">Home</a></li>
+                        <li class="nav-item"><a class="nav-link" href="#">Sobre</a></li>
+                        <li class="nav-item"><a class="nav-link" href="#">Serviços</a></li>
+                        <li class="nav-item"><a class="nav-link" href="#">Contato</a></li>
+                    </ul>
+                </div>
+            </nav>
+        </div>
     </header>
-    <main>
+    <main class="container py-4">
         <section id="container-tarefas">
-            <div id="lista-tarefas">
-              <form action="" id ="form-tarefas">
-                  <input type="text" id="input-tarefa" placeholder="adicione uma nova tarefa">
-                  <button type="submit" id="add-tarefa">ADD</button>
-                  
-              </form>
-              <ul id="lista">
-      
-              </ul>
-      
+            <div id="lista-tarefas" class="p-3 bg-white shadow-sm rounded">
+                <form id="form-tarefas" class="d-flex mb-3">
+                    <input type="text" id="input-tarefa" class="form-control me-2" placeholder="Adicione uma nova tarefa">
+                    <button type="submit" id="add-tarefa" class="btn btn-primary">ADD</button>
+                </form>
+                <ul id="lista" class="list-group">
+                    <!-- Lista de tarefas será inserida dinamicamente -->
+                </ul>
             </div>
-      
-          </section>
+        </section>
     </main>
-    
-    <footer id="rodape-tarefas">
-      <span>&copy; IFBA 2024</span>
+    <footer class="text-white text-center py-3">
+        <span>&copy; IFBA 2024</span>
     </footer>
-    <!-- java script-->
-     <script src="../js/script.js"></script>
+   <!-- link javascript-->
+    <script src="../js/script.js"></script>
 </body>
 </html>

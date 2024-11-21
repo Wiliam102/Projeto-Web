@@ -25,14 +25,14 @@ function adicionarLinha() {
     // Criando os botões de ação (Editar e Excluir)
     const btnEditar = document.createElement("button");
     btnEditar.textContent = "Editar";
-    btnEditar.classList.add("btn-edit");
+    btnEditar.classList.add("btn-edit", "btn-warning", "btn-sm", "me-2");
     btnEditar.onclick = function () {
         editarLinha(novaLinha);
     };
 
     const btnExcluir = document.createElement("button");
     btnExcluir.textContent = "Excluir";
-    btnExcluir.classList.add("btn-excluir");
+    btnExcluir.classList.add("btn-excluir", "btn-danger", "btn-sm");
     btnExcluir.onclick = function () {
         excluirLinha(novaLinha);
     };
@@ -103,8 +103,8 @@ document.addEventListener('DOMContentLoaded', () => {
     const li = document.createElement('li');
     li.innerHTML = `
       <span class="tarefa-texto">${tarefa}</span>
-      <button class="editar-tarefa">Editar</button>
-      <button class="remover-tarefa">Remover</button>
+      <button class="editar-tarefa btn-warning btn-sm editar-tarefa me-1">Editar</button>
+      <button class="remover-tarefa btn-danger btn-sm remover-tarefa">Remover</button>
     `;
 
     lista.appendChild(li);

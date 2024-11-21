@@ -4,39 +4,43 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Usuarios cadastrados</title>
-    <link rel="stylesheet" href="../css/principal.css">
+    <!--<link rel="stylesheet" href="../css/principal.css">-->
+    <link rel="stylesheet" href="../bootstrap/bootstrap.min.css">
 </head>
-<body>
-    <header>
-        <h1 id="titulo-tabela">Tabela de usuários</h1>
+<body class="bg-light">
+    <header class="text-center my-4">
+        <h1 class="display-4">Tabela de Usuários</h1>
     </header>
     
-<main>
-    <section id="container-usuarios">
-        <button id="btn-add" onclick="adicionarLinha()">Adicionar usuário</button>
-        <table id="tabela-user">
-            <thead>
-                <tr>
-                    <th>id</th>
-                    <th>nome</th>
-                    <th>email</th>
-                    <th>telefone</th>
-                    <th>ações</th>
-                </tr>
-            </thead>
-            <tbody>
-                
-                <!-- As linhas da tabela serão inseridas aqui -->
-            </tbody>
-        </table>
-    </section>
-</main>
+    <main class="container">
+        <section>
+            <div class="mb-3 d-flex justify-content-end">
+                <button class="btn btn-primary" onclick="adicionarLinha()">Adicionar Usuário</button>
+            </div>
+            <div class="table-responsive">
+                <table class="table table-striped table-hover" id="tabela-user">
+                    <thead class="table-dark">
+                        <tr>
+                            <th>ID</th>
+                            <th>Nome</th>
+                            <th>Email</th>
+                            <th>Telefone</th>
+                            <th>Ações</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <!-- As linhas da tabela serão inseridas aqui -->
+                    </tbody>
+                </table>
+            </div>
+        </section>
+    </main>
 
-<script src="../js/script.js"></script>
-<footer>
-    <nav>
-        <a href="../pages/index.html">Sair</a>
-    </nav>
-</footer>
+    <footer class="text-center mt-4">
+        <nav>
+            <a href="../pages/index.html" class="btn btn-outline-danger">Sair</a>
+        </nav>
+    </footer>
+    <script src="../js/script.js"></script>
 </body>
 </html>
