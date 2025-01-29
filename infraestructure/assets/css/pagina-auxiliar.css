@@ -1,0 +1,8 @@
+/* Configurações Globais */
+li > a{
+  font-weight: 600;
+  font-size: 1.2em;
+  color: white;
+  text-decoration: none;
+  margin:10px;
+}

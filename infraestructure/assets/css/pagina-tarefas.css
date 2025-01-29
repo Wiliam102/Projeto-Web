@@ -1,0 +1,54 @@
+body{
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+main{
+    flex: 1;
+}
+.nav-link-head{
+    color: white;
+    text-decoration: none;
+    margin:10px;
+    font-weight: 600;
+}
+.nav-link-head:hover{
+    color: rgba(255, 255, 255, 0.664);
+    border-bottom: 1px solid white;
+}
+/* Estilizando a lista de tarefas */
+#lista {
+    list-style-type: none;  /* Remove os marcadores padrões */
+    padding: 0;  /* Remove o padding padrão */
+    margin: 0;  /* Remove a margem padrão */
+}
+
+/* Estilizando cada item da lista */
+#lista li {
+    background-color: #fff;  /* Cor de fundo branca */
+    border: 1px solid #ddd;  /* Bordas leves */
+    padding: 10px;  /* Espaçamento interno */
+    margin: 5px 0;  /* Espaçamento entre os itens */
+    border-radius: 5px;  /* Bordas arredondadas */
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+/* Estilo ao passar o mouse sobre o item da lista */
+#lista li:hover {
+    background-color: #f1f1f1;  /* Muda o fundo quando o mouse passa por cima */
+}
+
+/* Estilizando o ícone de editar e deletar (exemplo com ícones Font Awesome) */
+#lista li .icone {
+    cursor: pointer;
+    font-size: 18px;
+    color: #007bff;  /* Cor azul para os ícones */
+    margin-left: 10px;  /* Espaçamento entre o texto e o ícone */
+}
+
+/* Muda a cor do ícone ao passar o mouse */
+#lista li .icone:hover {
+    color: #0056b3;  /* Muda para um tom mais escuro quando passa o mouse */
+}

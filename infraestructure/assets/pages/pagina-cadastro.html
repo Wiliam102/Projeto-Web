@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- Definindo o charset da página como UTF-8 para suportar caracteres especiais -->
+    <meta charset="UTF-8">
+    
+    <!-- Definindo a viewport para tornar a página responsiva em dispositivos móveis -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <!-- Link para o arquivo CSS do Bootstrap (framework de estilização) -->
+    <!--<link rel="stylesheet" href="../css/principal.css"> -->
+    <link rel="stylesheet" href="../bootstrap/bootstrap.min.css">
+    
+    <title>Cadastro</title>
+    
+    <style>
+      /* Estilos personalizados para o cabeçalho */
+      header{
+        background-color: #b3958f; /* Cor de fundo do cabeçalho */
+      }
+
+      /* Estilo de fundo da página */
+      body{
+          background-color: #ffddcc; /* Cor de fundo da página */
+      }
+
+      /* Estilo do formulário */
+      form{
+          background-color: white; /* Cor de fundo do formulário */
+      }
+
+      /* Estilo para o título no cabeçalho */
+      header > h1{
+        color: white; /* Cor do texto do título */
+      }
+
+      /* Estilos para o rodapé */
+      footer{
+        background-color: #b3958f; /* Cor de fundo do rodapé */
+        color: white; /* Cor do texto no rodapé */
+      }
+   </style>
+</head>
+<body>
+
+    <!-- Cabeçalho da página -->
+    <header class="text-center my-5 p-4">
+        <!-- Título do sistema -->
+        <h1>Sistema de Gestão de Tarefas</h1>
+    </header>
+
+    <!-- Seção principal da página com o formulário -->
+    <section class="d-flex justify-content-center">
+        <!-- Formulário de cadastro -->
+        <form action="#" id="cadastro-form" class="bg-white-p4 rounded shadow-sm border border-secundary" style="max-width: 400px; width: 100%; padding:40px;">
+          <h2 class="text-center mb-4">Cadastro</h2>
+
+            <!-- Campo para o nome do usuário -->
+            <div class="form-group">
+              <label for="nome">Nome</label>
+              <input type="text" class="form-control mt-2 mb-1" required minlength="3" placeholder="digite seu nome">
+            </div>
+
+            <!-- Campo para o email do usuário -->
+            <div class="form-group">
+                <label for="Email">Email</label>
+              <input type="email" class="form-control mt-2 mb-1" required placeholder="exemplo@hotmail.com">
+            </div>
+
+            <!-- Campo para a senha do usuário -->
+            <div class="form-group">
+                <label for="Senha">Senha</label>
+              <input type="password" required minlength="6" class="form-control mt-2 mb-1" placeholder="digite sua senha">
+            </div>
+
+            <!-- Campo para o telefone do usuário com validação de formato -->
+            <div class="form-group">
+                <label for="telefone">Telefone</label>
+              <input type="tel" class="form-control mt-2"
+              required pattern="\(\d{2}\) \d{4,5}-\d{4}"  placeholder="(XX) XXXXX-XXXX">
+            </div>
+
+            <!-- Botão de envio do formulário -->
+           <button type="submit" class="btn w-100 py-2 mt-3" id="btn-login">Salvar</button>
+        </form>
+    </section>
+
+    <!-- Rodapé da página -->
+    <footer class="text-center mt-5 mb-4 py-3">
+       <!-- Copyright do rodapé -->
+       <span>&copy;IFBA 2024</span>
+    </footer>
+    
+</body>
+</html>

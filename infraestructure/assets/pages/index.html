@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- favicon -->
+    <link rel="shortcut icon" href="../images/favicon-16x16.png" type="image/x-icon">
+    <!-- CSS 
+    <link rel="stylesheet" href="/infraestructure/assets/css/principal.css">
+-->
+    <link rel="stylesheet" href="../bootstrap/bootstrap.min.css">
+    <title>Projeto</title>
+ <style>
+    /* adicionando cores de fundo*/
+    header{
+      background-color: #b3958f;
+    }
+    body{
+        background-color: #ffddcc;
+    }
+    form{
+        background-color: white;
+    }
+    form > a{
+        color: #8fb3b3;
+    }
+    footer{
+        background-color: #b3958f;
+        color: white;
+    }
+ </style>
+</head>
+<body>
+    <!-- cabecalho da pagina-->
+    <header class="text-center my-5  text-white p-4">
+        <h1>Sistema de gestão de tarefas</h1>
+    </header>
+    <!-- tag main pra parte pricipal da pagina-->
+<main>
+    <!-- uma secao abaixo com classes bootstrap para deixar flexivel e centralizado-->
+    <section class="d-flex justify-content-center">
+       <!-- um formulario abaixo com classes bootstrap para adicionar o tamanho do form cor de fundo com borda cinza e leve sombra -->
+        <form action="#" id="login-form" class="bg-white-p4 rounded shadow-sm border border-secundary" style="max-width: 400px; width: 100%; padding:40px;">
+            <h2 class="text-center mb-4">Login</h2>
+            <!-- abaixo tem um campo obrigatorio do tipo email-->
+            <div class="form-group">
+                <label for="email">Email</label>
+                <input type="email" class="form-control mt-2 mb-1" id="email" placeholder="Digite seu email" required>
+            </div>
+           <!-- abaixo tem o input com classe bootstrap formatada com minimo tamanho 6 digitos e campo obrigatorio-->
+            <div class="form-group">
+                <label for="senha">Senha</label>
+                <input type="password" class="form-control mt-2" id="senha" required minlength="6"placeholder="Digite sua senha">
+            </div>
+            <!-- botao de  submissão com estilização em bootstrap-->
+            <button type="submit" class="btn btn-primary w-100 py-2 mt-3" id="btn-login">Entrar</button>
+            
+            <a href="../pages/pagina-cadastro.html" class="d-block text-center mt-3"><i>Cadastre-se</i></a>
+        </form>
+    </section>
+</main>
+    <!-- rodapé da pagina-->
+    <footer class="text-center mt-5 mb-4 py-3">
+        <span> &copy;IFBA 2024</span>
+    </footer>
+    <!-- links javascript-->
+    <script src="../js/script.js"></script>
+    <script src="../bootstrap/bootstrap.bundle.min.js"></script>
+</body>
+</html>

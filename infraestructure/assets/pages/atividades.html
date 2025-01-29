@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="../images/favicon2-16x16.png" type="image/x-icon">
+    
+    <!-- Inclusão do arquivo CSS do Bootstrap (estilos pré-definidos) -->
+    <link rel="stylesheet" href="../css/pagina-auxiliar.css">
+    <link rel="stylesheet" href="../bootstrap/bootstrap.min.css">
+     
+    <title>Pagina auxiliar</title>
+    
+    <style>
+        /* Estilos personalizados para o cabeçalho e fundo */
+        header {
+            background-color: rgb(126, 206, 233); /* Cor de fundo do cabeçalho */
+        }
+        body {
+            background-color: #ffddcc; /* Cor de fundo do corpo da página */
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Cabeçalho da página -->
+    <header class=" text-white py-3 mb-4">
+      <div class="container">
+        <h1 class="h3 text-center">Página para as Atividades</h1>
+        
+        <!-- Navegação do site -->
+        <nav class="mt-3">
+          <ul class="nav justify-content-center">
+            <!-- Links de navegação -->
+            <li>
+              <a href="../pages/index.html">Home</a>
+            </li>
+            <li>
+              <a href="../pages/index.html">Login</a>
+            </li>
+            <li>
+              <a href="../pages/pagina-cadastro.html">Cadastro</a>
+            </li>
+          </ul>
+        </nav>
+      </div>
+    </header>
+  
+    <!-- Corpo principal da página -->
+    <main class="container">
+      <section>
+        <!-- Seção de Lista de Atividades -->
+        <div id="lista" class="mb-4">
+          <h3 class="h5 mb-3 text-center">Lista de Atividades</h3>
+          <ul class="list-group">
+            <!-- Itens da lista de atividades -->
+            <li class="list-group-item">Dragon Ball Z</li>
+            <li class="list-group-item">Naruto</li>
+            <li class="list-group-item">One Piece</li>
+            <li class="list-group-item">Death Note</li>
+          </ul>
+        </div>
+  
+        <!-- Seção de Imagem Responsiva -->
+        <div id="imagem-responsiva" class="mb-4">
+          <h3 class="h5 mb-3 text-center">Imagem Responsiva</h3>
+          <picture>
+            <!-- Imagens responsivas com diferentes tamanhos conforme o dispositivo -->
+            <source media="(max-width: 500px)" srcset="../images/pequena.jfif">
+            <source media="(max-width: 800px)" srcset="../images/media.png">
+            <img src="../images/grande.jpg" alt="Imagem de exemplo" class="img-fluid rounded shadow">
+          </picture>
+        </div>
+  
+        <!-- Seção de Vídeo Incorporado -->
+        <div id="video" class="mb-4">
+          <h3 class="h5 mb-3 text-center">Vídeo</h3>
+          <div class="ratio ratio-16x9">
+            <!-- Video incorporado do YouTube -->
+            <iframe src="https://www.youtube.com/embed/GI3rKNjQQig?si=iGWEVleyOuX_Q_Gh" 
+                    title="YouTube video player" 
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
+                    allowfullscreen>
+            </iframe>
+          </div>
+        </div>
+  
+        <!-- Seção de Áudio Incorporado -->
+        <div id="audio" class="mb-4">
+          <h3 class="h5 mb-3 text-center">Áudio</h3>
+          <!-- Áudio incorporado com controles -->
+          <audio controls class="w-100">
+            <source src="/infraestructure/assets/media/Adoniran Barbosa   Trem das onze 1964 ( 128kbps ).mp3" type="audio/mp3">
+            Seu navegador não suporta o elemento de áudio.
+          </audio>
+        </div>
+      </section>
+    </main>
+  
+    <!-- Rodapé da página -->
+    <footer class="bg-dark text-white text-center py-3 mt-4">
+      Canarana-BA 2024
+    </footer>
+</body>
+</html>

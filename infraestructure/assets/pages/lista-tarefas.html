@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lista de tarefas</title>
+    <link rel="stylesheet" href="../css/pagina-tarefas.css">
+    <link rel="stylesheet" href="../bootstrap/bootstrap.min.css">
+    <style>
+        body {
+            
+  --s: 56px; /* control the size abaixo tem uma estilização para o fundo da pagina que peguei pronto de um site de stilos*/
+  --c1: #71c4be;
+  --c2: #f7a3a1;
+  
+  --_c1: var(--c1) 99%,#0000 101%;
+  --_c2: var(--c2) 99%,#0000 101%;
+  
+  --r:calc(var(--s)*.866); 
+  --g0:radial-gradient(var(--s),var(--_c1));
+  --g1:radial-gradient(var(--s),var(--_c2));
+  --f:radial-gradient(var(--s) at calc(100% + var(--r)) 50%,var(--_c1));
+  --p:radial-gradient(var(--s) at 100% 50%,var(--_c2));
+  background:
+    var(--f) 0 calc(-5*var(--s)/2),
+    var(--f) calc(-2*var(--r)) calc(var(--s)/2),
+    var(--p) 0 calc(-2*var(--s)),
+    var(--g0) var(--r) calc(-5*var(--s)/2),
+    var(--g1) var(--r) calc( 5*var(--s)/2),
+    radial-gradient(var(--s) at 100% 100%,var(--_c1)) 0 calc(-1*var(--s)),   
+    radial-gradient(var(--s) at 0%   50% ,var(--_c1)) 0 calc(-4*var(--s)),
+    var(--g1) calc(-1*var(--r)) calc(-7*var(--s)/2),
+    var(--g0) calc(-1*var(--r)) calc(-5*var(--s)/2),
+    var(--p) calc(-2*var(--r)) var(--s),
+    var(--g0) calc(-1*var(--r)) calc(var(--s)/ 2),
+    var(--g1) calc(-1*var(--r)) calc(var(--s)/-2),
+    var(--g0) 0 calc(-1*var(--s)),
+    var(--g1) var(--r) calc(var(--s)/-2),
+    var(--g0) var(--r) calc(var(--s)/ 2) 
+    var(--c2);
+  background-size: calc(4*var(--r)) calc(6*var(--s));
+}
+/* adicao de css para fundo do cabecalho e rodape*/
+header{
+    background-color: #b3958f;
+}
+footer{
+    background-color: #b3958f;
+}
+    </style>
+</head>
+<body class="bg-light">
+    <header class="text-white py-3">
+        <div class="container d-flex justify-content-between align-items-center">
+            <h1 class="h2 mb-0">Lista de Tarefas</h1>
+            <!-- Menu hamburguer do Bootstrap -->
+            <nav class="navbar navbar-expand-lg navbar-dark">
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarMenu" aria-controls="navbarMenu" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarMenu">
+                    <ul class="navbar-nav ms-auto">
+                        <li class="nav-item"><a class="nav-link-head" href="#">Home</a></li>
+                        <li class="nav-item"><a class="nav-link-head" href="#">Sobre</a></li>
+                        <li class="nav-item"><a class="nav-link-head" href="#">Serviços</a></li>
+                        <li class="nav-item"><a class="nav-link-head" href="#">Contato</a></li>
+                    </ul>
+                </div>
+            </nav>
+        </div>
+    </header>
+    <main class="container py-4">
+        <section id="container-tarefas">
+            <div id="lista-tarefas" class="p-3 bg-white shadow-sm rounded">
+                <form id="form-tarefas" class="d-flex mb-3">
+                    <input type="text" id="input-tarefa" class="form-control me-2" placeholder="Adicione uma nova tarefa">
+                    <button type="submit" id="add-tarefa" class="btn btn-primary">ADD</button>
+                </form>
+                <ul id="lista" class="list-group">
+                    <!-- Lista de tarefas será inserida dinamicamente -->
+                </ul>
+            </div>
+        </section>
+    </main>
+    <footer class="text-white text-center py-3">
+        <span>&copy; IFBA 2024</span>
+    </footer>
+   <!-- link javascript-->
+    <script src="../js/script.js"></script>
+    <script src="../bootstrap/bootstrap.bundle.min.js"></script>
+</body>
+</html>
