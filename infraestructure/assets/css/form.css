@@ -1,0 +1,37 @@
+body{
+  background-color:#ffddcc !important;
+}
+header{
+    margin-bottom: 30px;
+    background-color: #b3958f;
+}
+h1{
+    color: white;
+}
+
+footer{
+    background-color: #b3958f;
+    color: white;
+}
+form{
+    background-color: white;
+}
+#btn-login{
+    background-color: #b3958f;
+    border: none;
+    color: white;
+}
+#btn-login:hover{
+    background-color: #9e7f79;
+}
+a{
+    color:#8fb3b3;
+    font-weight: 500;
+}
+a:hover{
+    color: #688686;
+}
+#link-voltar{
+    text-align: center;
+    margin-left: 43%;
+}

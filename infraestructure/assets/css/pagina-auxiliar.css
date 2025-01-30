@@ -6,3 +6,22 @@ li > a{
   text-decoration: none;
   margin:10px;
 }
+header{
+  background-color: #b3958f;
+}
+li > a:hover{
+  color: white !important;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.856);
+}
+footer{
+  background-color: #b3958f !important;
+  font-weight: 400;
+}
+body{
+  background-color: #ffddcc !important;
+}
+#imagem-responsiva{
+  border-top:2px solid white;
+  border-bottom: 2px solid white;
+  padding: 10px;
+}
