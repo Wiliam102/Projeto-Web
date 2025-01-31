@@ -1,46 +1,47 @@
 
 // Função para listar as tarefas
 function listarTarefas() {
-  fetch('http://localhost:8080/task/findall')  // Substitua pela URL da sua API de listar tarefas
-      .then(response => response.json())
-      .then(tarefas => {
-          // Limpa a lista existente para evitar duplicação
-          const listaTarefas = document.getElementById('lista');
-          listaTarefas.innerHTML = ''; 
-
-          // Adiciona cada tarefa à lista
-          tarefas.forEach(tarefa => {
-              const li = document.createElement('li');
-              li.classList.add('list-group-item');
-              li.textContent = tarefa.description;  // Supondo que a propriedade seja 'descricao'
-
-              // Criar o grupo de ícones para cada tarefa
-              const iconsContainer = document.createElement('span');
-              iconsContainer.classList.add('icons-container'); // Pode adicionar uma classe para estilizar os ícones
-
-              // Ícone de atualizar (edit)
-              const editIcon = document.createElement('i');
-              editIcon.classList.add('fa', 'fa-edit', 'mx-2');  // Ícone FontAwesome
-              editIcon.style.cursor = 'pointer';
-              editIcon.addEventListener('click', () => editarTarefa(tarefa.id));  // Passa o id da tarefa para edição
-              iconsContainer.appendChild(editIcon);
-
-              // Ícone de deletar (delete)
-              const deleteIcon = document.createElement('i');
-              deleteIcon.classList.add('fa', 'fa-trash', 'mx-2');  // Ícone FontAwesome
-              deleteIcon.style.cursor = 'pointer';
-              deleteIcon.addEventListener('click', () => deletarTarefa(tarefa.id));  // Passa o id da tarefa para deletar
-              iconsContainer.appendChild(deleteIcon);
-
-              // Adiciona os ícones à tarefa
-              li.appendChild(iconsContainer);
-
-              // Adiciona a tarefa à lista
-              listaTarefas.appendChild(li);
-          });
-      })
-      .catch(error => console.error('Erro ao listar tarefas:', error));
-}
+    fetch('http://localhost:8080/task/findall')  // Substitua pela URL da sua API de listar tarefas
+        .then(response => response.json())
+        .then(tarefas => {
+            // Limpa a lista existente para evitar duplicação
+            const listaTarefas = document.getElementById('lista');
+            listaTarefas.innerHTML = ''; 
+  
+            // Adiciona cada tarefa à lista
+            tarefas.forEach(tarefa => {
+                const li = document.createElement('li');
+                li.classList.add('list-group-item', 'd-flex', 'justify-content-between', 'align-items-center');
+                li.textContent = `Id:${tarefa.id}  ${tarefa.description}`;  // Supondo que a propriedade seja 'descricao'
+  
+                // Criar o grupo de botões para cada tarefa
+                const buttonsContainer = document.createElement('div');
+                buttonsContainer.classList.add('btn-group');
+  
+                // Botão de atualizar (edit)
+                const editButton = document.createElement('button');
+                editButton.classList.add('btn', 'btn-warning', 'btn-sm');
+                editButton.textContent = 'Editar';
+                editButton.addEventListener('click', () => editarTarefa(tarefa.id));
+                buttonsContainer.appendChild(editButton);
+  
+                // Botão de deletar (delete)
+                const deleteButton = document.createElement('button');
+                deleteButton.classList.add('btn', 'btn-danger', 'btn-sm', 'ms-2');
+                deleteButton.textContent = 'Excluir';
+                deleteButton.addEventListener('click', () => deletarTarefa(tarefa.id));
+                buttonsContainer.appendChild(deleteButton);
+  
+                // Adiciona os botões à tarefa
+                li.appendChild(buttonsContainer);
+  
+                // Adiciona a tarefa à lista
+                listaTarefas.appendChild(li);
+            });
+        })
+        .catch(error => console.error('Erro ao listar tarefas:', error));
+  }
+  
 
 // Chama a função quando a página carrega
 document.addEventListener('DOMContentLoaded', listarTarefas);
@@ -49,6 +50,7 @@ document.addEventListener('DOMContentLoaded', function () {
   // Selecione o formulário e o input
   const formTarefas = document.getElementById('form-tarefas');
   const inputTarefa = document.getElementById('input-tarefa');
+  const erroTarefa = document.getElementById('erro-tarefa')
 
   // Adicione o evento de submit ao formulário
   formTarefas.addEventListener('submit', function (event) {
@@ -56,9 +58,17 @@ document.addEventListener('DOMContentLoaded', function () {
 
       // Pegue o texto da tarefa
       const tarefaTexto = inputTarefa.value.trim();
+      if(!tarefaTexto){
+        inputTarefa.classList.add('is-invalid');
+        erroTarefa.textContent = "Por favor preencha o campo"
 
-      // Verifique se o campo não está vazio
-      if (tarefaTexto !== "") {
+
+        return;
+      }
+      // Se o campo estiver preenchido, remove o erro
+    inputTarefa.classList.remove('is-invalid');
+    erroTarefa.textContent = "";  // Limpa a mensagem de erro
+
           // Envie para a API usando fetch
           fetch('http://localhost:8080/task/save', {
               method: 'POST', // Método POST
@@ -66,7 +76,7 @@ document.addEventListener('DOMContentLoaded', function () {
                   'Content-Type': 'application/json',
               },
               body: JSON.stringify({
-                  tarefa: tarefaTexto, // Enviando o texto da tarefa para o backend
+                  description: tarefaTexto, // Enviando o texto da tarefa para o backend
               }),
           })
           .then(response => response.json()) // A resposta da API (supondo que seja um JSON)
@@ -82,11 +92,6 @@ document.addEventListener('DOMContentLoaded', function () {
           
           // Limpe o campo de input após o envio
           inputTarefa.value = '';
-          
-      } else {
-          // por favor insira uma tarefa
-          alert('Por favor, insira uma tarefa.');
-      }
   });
 });
 function editarTarefa(id) {
@@ -98,7 +103,7 @@ function editarTarefa(id) {
           headers: {
               'Content-Type': 'application/json',
           },
-          body: JSON.stringify({ descricao: novaDescricao })  // Atualiza com a nova descrição
+          body: JSON.stringify({ description: novaDescricao })  // Atualiza com a nova descrição
       })
       .then(response => {
           if (!response.ok) {
@@ -114,18 +119,26 @@ function editarTarefa(id) {
   }
 }
 function deletarTarefa(id) {
-  fetch(`SUA_API_URL/tarefas/${id}`, {
-      method: 'DELETE',
-  })
-  .then(response => {
-      if (!response.ok) {
-          throw new Error('Erro ao deletar tarefa');
-      }
-      return response.json();
-  })
-  .then(data => {
-      console.log('Tarefa deletada com sucesso:', data);
-      listarTarefas();  // Atualiza a lista de tarefas após a exclusão
-  })
-  .catch(error => console.error('Erro ao deletar tarefa:', error));
-}
+    // Exibe uma janela de confirmação
+    const confirmar = window.confirm('Tem certeza que deseja deletar esta tarefa?');
+    
+    if (confirmar) {
+      fetch(`http://localhost:8080/task/delete/${id}`, {
+          method: 'DELETE',
+      })
+      .then(response => {
+          if (!response.ok) {
+              throw new Error('Erro ao deletar tarefa');
+          }
+          return response.json();
+      })
+      .then(data => {
+          console.log('Tarefa deletada com sucesso:', data);
+          listarTarefas();  // Atualiza a lista de tarefas após a exclusão
+      })
+      .catch(error => console.error('Erro ao deletar tarefa:', error));
+    } else {
+      console.log('A tarefa não foi deletada');
+    }
+  }
+  

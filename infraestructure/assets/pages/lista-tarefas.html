@@ -52,7 +52,7 @@ footer{
 <body class="bg-light">
     <header class="text-white py-3">
         <div class="container d-flex justify-content-between align-items-center">
-            <h1 class="h2 mb-0">Lista de Tarefas</h1>
+            <h1 class="h3 mb-0">Lista de Tarefas</h1>
             <!-- Menu hamburguer do Bootstrap -->
             <nav class="navbar navbar-expand-lg navbar-dark">
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarMenu" aria-controls="navbarMenu" aria-expanded="false" aria-label="Toggle navigation">
@@ -60,10 +60,10 @@ footer{
                 </button>
                 <div class="collapse navbar-collapse" id="navbarMenu">
                     <ul class="navbar-nav ms-auto">
-                        <li class="nav-item"><a class="nav-link-head" href="#">Home</a></li>
-                        <li class="nav-item"><a class="nav-link-head" href="#">Sobre</a></li>
-                        <li class="nav-item"><a class="nav-link-head" href="#">Serviços</a></li>
-                        <li class="nav-item"><a class="nav-link-head" href="#">Contato</a></li>
+                        <li class="nav-item"><a class="nav-link" href="../pages/index.html">Home</a></li>
+                        <li class="nav-item"><a class="nav-link" href="../pages/pagina-usuarios.html">Usuarios</a></li>
+                        <li class="nav-item"><a class="nav-link" href="#">Serviços</a></li>
+                        <li class="nav-item"><a class="nav-link" href="#">Contato</a></li>
                     </ul>
                 </div>
             </nav>
@@ -74,6 +74,7 @@ footer{
             <div id="lista-tarefas" class="p-3 bg-white shadow-sm rounded">
                 <form id="form-tarefas" class="d-flex mb-3">
                     <input type="text" id="input-tarefa" class="form-control me-2" placeholder="Adicione uma nova tarefa">
+                    <div id="erro-tarefa" class="invalid-feedback"></div>
                     <button type="submit" id="add-tarefa" class="btn btn-primary">ADD</button>
                 </form>
                 <ul id="lista" class="list-group">
@@ -86,7 +87,7 @@ footer{
         <span>&copy; IFBA 2024</span>
     </footer>
    <!-- link javascript-->
-    <script src="../js/script.js"></script>
+    <script src="../js/script_tarefas.js"></script>
     <script src="../bootstrap/bootstrap.bundle.min.js"></script>
 </body>
 </html>
